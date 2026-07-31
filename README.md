@@ -2,6 +2,8 @@
 
 A minimal, browser-based Pomodoro-style focus timer. No build step, no dependencies — just open it and start a session.
 
+Repository: https://github.com/robyntjiesnathan-hash/focus-flow
+
 ## Features
 
 - **Three modes** — Focus (25 min), Short Break (5 min), Long Break (15 min)
