@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Focus Flow</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Focus Flow</h1>
+
+    <div class="mode-tabs">
+      <button class="mode-btn active" data-mode="focus" data-minutes="25">Focus</button>
+      <button class="mode-btn" data-mode="short" data-minutes="5">Short Break</button>
+      <button class="mode-btn" data-mode="long" data-minutes="15">Long Break</button>
+    </div>
+
+    <div class="ring-wrap">
+      <svg class="ring" viewBox="0 0 240 240">
+        <circle class="ring-track" cx="120" cy="120" r="108"></circle>
+        <circle class="ring-progress" cx="120" cy="120" r="108"></circle>
+      </svg>
+      <div class="ring-center">
+        <span class="time" id="time">25:00</span>
+        <span class="status" id="status">Ready</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="startPause" class="primary">Start</button>
+      <button id="reset">Reset</button>
+    </div>
+
+    <section class="stats">
+      <div class="stat">
+        <span class="stat-value" id="sessionCount">0</span>
+        <span class="stat-label">Sessions today</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="totalMinutes">0</span>
+        <span class="stat-label">Focus minutes today</span>
+      </div>
+    </section>
+
+    <section class="log">
+      <div class="log-header">
+        <h2>Session Log</h2>
+        <button id="clearLog">Clear</button>
+      </div>
+      <ul id="logList"></ul>
+    </section>
+  </main>
+
+  <audio id="chime" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
