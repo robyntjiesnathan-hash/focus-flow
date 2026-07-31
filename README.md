@@ -3,6 +3,7 @@
 A minimal, browser-based Pomodoro-style focus timer. No build step, no dependencies — just open it and start a session.
 
 Repository: https://github.com/robyntjiesnathan-hash/focus-flow
+Live: https://robyntjiesnathan-hash.github.io/focus-flow/
 
 ## Features
 
