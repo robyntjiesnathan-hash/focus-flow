@@ -16,9 +16,10 @@ export function renderStats() {
   sessionCountEl.textContent = state.sessions;
   totalMinutesEl.textContent = state.minutes;
   logList.innerHTML = "";
-  state.log.slice().reverse().forEach((entry) => {
+  state.log.slice().reverse().forEach((entry, i) => {
     const li = document.createElement("li");
     li.innerHTML = `<span class="log-type">${entry.type}</span><span>${entry.time}</span>`;
+    li.style.animationDelay = `${i * 60}ms`;
     logList.appendChild(li);
   });
 }

@@ -75,6 +75,20 @@
   padding: 6px 0;
   border-bottom: 1px solid var(--track);
   color: var(--ink-soft);
+  animation: logGlowIn 0.4s ease-out backwards;
+}
+
+@keyframes logGlowIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+    filter: brightness(1.8) drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 60%, transparent));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: brightness(1) drop-shadow(0 0 0 transparent);
+  }
 }
 
 #logList li:last-child { border-bottom: none; }

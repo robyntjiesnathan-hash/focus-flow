@@ -36,6 +36,7 @@ function setMode(newMode, minutes) {
   secondsLeft = totalSeconds;
   statusEl.textContent = "Ready";
   ringWrap.classList.toggle("break-mode", mode !== "focus");
+  ringWrap.classList.remove("done");
   modeButtons.forEach((btn) => btn.classList.toggle("active", btn.dataset.mode === mode));
   updateDisplay();
 }
@@ -81,6 +82,7 @@ function complete() {
   statusEl.textContent = "Done!";
   secondsLeft = 0;
   updateDisplay();
+  ringWrap.classList.add("done");
 }
 
 function start() {
@@ -89,6 +91,8 @@ function start() {
   startPauseBtn.textContent = "Pause";
   statusEl.textContent = mode === "focus" ? "Focusing" : "On Break";
   timerId = setInterval(tick, 1000);
+  ringWrap.classList.add("running");
+  ringWrap.classList.remove("done");
 }
 
 function pause() {
@@ -98,6 +102,7 @@ function pause() {
   if (statusEl.textContent === "Focusing" || statusEl.textContent === "On Break") {
     statusEl.textContent = "Paused";
   }
+  ringWrap.classList.remove("running");
 }
 
 function reset() {
@@ -105,6 +110,7 @@ function reset() {
   secondsLeft = totalSeconds;
   statusEl.textContent = "Ready";
   updateDisplay();
+  ringWrap.classList.remove("done");
 }
 
 startPauseBtn.addEventListener("click", () => {
