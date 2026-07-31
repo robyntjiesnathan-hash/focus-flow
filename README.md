@@ -26,5 +26,12 @@ npx serve .
 | File | Purpose |
 | --- | --- |
 | `index.html` | App markup and layout |
-| `style.css` | Styling, including light/dark theme support |
-| `script.js` | Timer logic, stats tracking, and session log |
+| `style.css` | Entry point that imports the files below |
+| `styles/tokens.css` | Color/shadow/radius custom properties, incl. dark theme |
+| `styles/base.css` | Reset, page layout, heading |
+| `styles/timer.css` | Mode tabs, progress ring, time display, buttons |
+| `styles/stats-log.css` | Stats cards and session log |
+| `script.js` | Entry point that imports the modules below |
+| `js/dom.js` | Element references and shared constants |
+| `js/storage.js` | `localStorage` persistence, stats and log rendering |
+| `js/timer.js` | Timer state machine, chime, notifications, event wiring |

@@ -1,0 +1,88 @@
+.stats {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.stat {
+  flex: 1;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.log {
+  width: 100%;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+}
+
+.log-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.log-header h2 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+#clearLog {
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+#clearLog:hover { color: var(--ink); }
+
+#logList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#logList li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--track);
+  color: var(--ink-soft);
+}
+
+#logList li:last-child { border-bottom: none; }
+
+#logList .log-type { color: var(--ink); font-weight: 500; }
+
+#logList:empty::after {
+  content: "No sessions yet — press Start.";
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
